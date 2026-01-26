@@ -15,7 +15,7 @@
 ### 方法2: Gitでクローン
 
 ```bash
-git clone https://github.com/あなたのユーザー名/Gaiji.git
+git clone https://github.com/ahodaihyou/Gaiji.git
 cd Gaiji
 ```
 
@@ -26,7 +26,7 @@ cd Gaiji
 GitHub Pagesが有効な場合、以下のURLで直接プレイできます：
 
 ```
-https://あなたのユーザー名.github.io/Gaiji/
+https://ahodaihyou.github.io/Gaiji/
 ```
 
 ## 🚀 セットアップ
