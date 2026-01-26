@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2Dシューティングゲーム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- タイトル画面 -->
+    <div id="titleScreen" class="screen active">
+        <div class="title-background">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="screen-content">
+            <div class="title-wrapper">
+                <h1 class="game-title">
+                    <span class="title-char">猫</span>
+                    <span class="title-char">と</span>
+                    <span class="title-char">女</span>
+                    <span class="title-char">は</span>
+                    <span class="title-char">蹴</span>
+                    <span class="title-char">ら</span>
+                    <span class="title-char">ね</span>
+                    <span class="title-char">え</span>
+                    <span class="title-char">、</span>
+                    <span class="title-char">あ</span>
+                    <span class="title-char">と</span>
+                    <span class="title-char">友</span>
+                    <span class="title-char">達</span>
+                    <span class="title-char">も</span>
+                    <span class="title-char">な</span>
+                </h1>
+                <div class="title-subtitle">Get Ready for Battle!</div>
+            </div>
+            <div class="input-group">
+                <label for="playerName">
+                    <span class="label-icon">👤</span>
+                    プレイヤー名
+                </label>
+                <input type="text" id="playerName" placeholder="あなたの名前を入力..." maxlength="20">
+            </div>
+            <button id="startButton" class="button">
+                <span class="button-text">START GAME</span>
+                <span class="button-arrow">→</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ゲーム画面 -->
+    <div id="gameScreen" class="screen">
+        <canvas id="gameCanvas"></canvas>
+        <div id="scoreDisplay">スコア: 0</div>
+    </div>
+
+    <!-- リザルト画面 -->
+    <div id="resultScreen" class="screen">
+        <div class="screen-content">
+            <h1>クリアタイムランキング</h1>
+            <div id="scoreList" class="score-list"></div>
+            <button id="backToTitleButton" class="button">タイトルへ戻る</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
