@@ -21,14 +21,6 @@ cd BSK-Shooting
 
 その後、`index.html`をブラウザで開いてください。
 
-### 方法3: GitHub Pagesで直接プレイ
-
-GitHub Pagesが有効な場合、以下のURLで直接プレイできます：
-
-```
-https://hirochin0.github.io/BSK-Shooting/
-```
-
 ## 🚀 セットアップ
 
 このゲームは外部ライブラリを必要としません。以下の手順で実行できます：
