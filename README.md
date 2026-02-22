@@ -26,7 +26,7 @@ cd BSK-Shooting
 GitHub Pagesが有効な場合、以下のURLで直接プレイできます：
 
 ```
-https://ahodaihyou.github.io/Gaiji/
+https://hirochin0.github.io/BSK-Shooting/
 ```
 
 ## 🚀 セットアップ
