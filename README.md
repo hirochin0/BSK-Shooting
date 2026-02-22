@@ -15,8 +15,8 @@
 ### 方法2: Gitでクローン
 
 ```bash
-git clone https://github.com/ahodaihyou/Gaiji.git
-cd Gaiji
+git clone https://github.com/hirochin0/BSK-Shooting.git
+cd BSK-Shooting
 ```
 
 その後、`index.html`をブラウザで開いてください。
