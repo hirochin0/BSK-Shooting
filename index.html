@@ -44,10 +44,57 @@
                 </label>
                 <input type="text" id="playerName" placeholder="あなたの名前を入力..." maxlength="20">
             </div>
-            <button id="startButton" class="button">
-                <span class="button-text">START GAME</span>
-                <span class="button-arrow">→</span>
-            </button>
+            <div class="title-buttons">
+                <button id="changeSkinButton" class="button button-secondary">
+                    <span class="button-text">CHANGE SKIN</span>
+                </button>
+                <button id="startButton" class="button">
+                    <span class="button-text">START GAME</span>
+                    <span class="button-arrow">→</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- キャラクター選択画面 -->
+    <div id="characterSelectScreen" class="screen">
+        <div class="screen-content character-select-content">
+            <h1 style="color: #fff; margin-bottom: 24px;">キャラクター選択</h1>
+            <div class="character-preview-wrap">
+                <img id="characterSelectPreview" class="character-preview" src="char/player/Hiroto.png" alt="プレビュー">
+            </div>
+            <div class="character-select-bar" id="characterSelectList"></div>
+            <div class="character-select-actions">
+                <button id="characterSelectButton" class="button">SELECT</button>
+            </div>
+            <button id="backFromCharacterSelect" class="button button-secondary" style="margin-top: 16px;">戻る</button>
+        </div>
+    </div>
+
+    <!-- 難易度選択画面 -->
+    <div id="difficultyScreen" class="screen">
+        <div class="screen-content">
+            <h1 style="color: #fff; margin-bottom: 40px;">難易度を選択</h1>
+            <div class="difficulty-buttons">
+                <button id="easyButton" class="difficulty-button" data-difficulty="easy">
+                    <span class="difficulty-title">イージーモード</span>
+                    <span class="difficulty-desc">敵HP: 2<br>接触回数: 4回まで</span>
+                </button>
+                <button id="normalButton" class="difficulty-button" data-difficulty="normal">
+                    <span class="difficulty-title">ノーマルモード</span>
+                    <span class="difficulty-desc">敵HP: 5<br>接触回数: 1回でゲームオーバー</span>
+                </button>
+                <button id="hardButton" class="difficulty-button" data-difficulty="hard">
+                    <span class="difficulty-title">ハードモード</span>
+                    <span class="difficulty-desc">敵HP: 7<br>接触回数: 1回でゲームオーバー<br>高速モード</span>
+                </button>
+                <!-- 隠し難易度「國」ボタン（初期は非表示） -->
+                <button id="kuniButton" class="difficulty-button hidden-difficulty" data-difficulty="kuni">
+                    <span class="difficulty-title">國モード</span>
+                    <span class="difficulty-desc">敵HP: 10<br>接触回数: 1回でゲームオーバー<br>超高速モード（隠し）</span>
+                </button>
+            </div>
+            <button id="backToTitleFromDifficulty" class="button" style="margin-top: 30px;">タイトルへ戻る</button>
         </div>
     </div>
 
