@@ -16,25 +16,10 @@
             <div class="particle"></div>
             <div class="particle"></div>
         </div>
+        <div class="coin-display" id="titleCoinDisplay">🪙 0</div>
         <div class="screen-content">
             <div class="title-wrapper">
-                <h1 class="game-title">
-                    <span class="title-char">猫</span>
-                    <span class="title-char">と</span>
-                    <span class="title-char">女</span>
-                    <span class="title-char">は</span>
-                    <span class="title-char">蹴</span>
-                    <span class="title-char">ら</span>
-                    <span class="title-char">ね</span>
-                    <span class="title-char">え</span>
-                    <span class="title-char">、</span>
-                    <span class="title-char">あ</span>
-                    <span class="title-char">と</span>
-                    <span class="title-char">友</span>
-                    <span class="title-char">達</span>
-                    <span class="title-char">も</span>
-                    <span class="title-char">な</span>
-                </h1>
+                <h1 class="game-title" id="titleLogo">BSK SHOOTING</h1>
                 <div class="title-subtitle">Get Ready for Battle!</div>
             </div>
             <div class="input-group">
@@ -48,10 +33,18 @@
                 <button id="changeSkinButton" class="button button-secondary">
                     <span class="button-text">CHANGE SKIN</span>
                 </button>
+                <button id="skillEquipButton" class="button button-secondary">
+                    <span class="button-text">SKILL EQUIP</span>
+                </button>
                 <button id="startButton" class="button">
                     <span class="button-text">START GAME</span>
                     <span class="button-arrow">→</span>
                 </button>
+            </div>
+            <div class="title-menu" id="titleMenu">
+                <button id="titleStartMenu" class="menu-item selected">START</button>
+                <button id="titleShopMenu" class="menu-item">SHOP</button>
+                <button id="titleSettingMenu" class="menu-item">SETTING</button>
             </div>
         </div>
     </div>
@@ -98,16 +91,92 @@
         </div>
     </div>
 
+    <!-- ショップ画面 -->
+    <div id="shopScreen" class="screen">
+        <div class="screen-content shop-content">
+            <div class="coin-display" id="shopCoinDisplay">🪙 0</div>
+            <h1 style="color: #fff; margin-bottom: 16px;">SHOP</h1>
+            <div class="shop-tabs">
+                <button id="shopTabSkill" class="shop-tab selected">SKILL</button>
+                <button id="shopTabSkin" class="shop-tab">SKIN</button>
+            </div>
+            <div id="shopItemList" class="shop-item-list"></div>
+            <div id="shopMessage" class="shop-message"></div>
+            <button id="backFromShopButton" class="button button-secondary">タイトルへ戻る</button>
+        </div>
+        <div id="purchaseDialog" class="dialog hidden">
+            <div class="dialog-content">
+                <p>購入しますか？</p>
+                <div class="dialog-actions">
+                    <button id="purchaseYesButton" class="button">YES</button>
+                    <button id="purchaseNoButton" class="button button-secondary">NO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 設定画面 -->
+    <div id="settingScreen" class="screen">
+        <div class="screen-content setting-content">
+            <h1 style="color:#fff;">SETTING</h1>
+            <div class="setting-item selected" data-setting="bgm">
+                <span>BGM</span>
+                <span id="bgmValue">70%</span>
+                <div class="setting-bar"><div id="bgmBar"></div></div>
+            </div>
+            <div class="setting-item" data-setting="se">
+                <span>SE</span>
+                <span id="seValue">70%</span>
+                <div class="setting-bar"><div id="seBar"></div></div>
+            </div>
+            <button id="saveSettingButton" class="button">保存</button>
+            <button id="cancelSettingButton" class="button button-secondary">キャンセル</button>
+            <button id="backFromSettingButton" class="button button-secondary">タイトルへ戻る</button>
+        </div>
+    </div>
+
+    <!-- スキル装備画面 -->
+    <div id="skillEquipScreen" class="screen">
+        <div class="screen-content skill-equip-content">
+            <h1 style="color:#fff;">SKILL EQUIP</h1>
+            <div class="skill-equip-layout">
+                <div>
+                    <h3 style="color:#fff;">所持スキル</h3>
+                    <div id="skillEquipList" class="shop-item-list"></div>
+                </div>
+                <div>
+                    <h3 style="color:#fff;">装備スロット</h3>
+                    <div id="skillEquipSlots" class="equip-slots"></div>
+                    <button id="unequipSkillButton" class="button button-secondary">外す</button>
+                </div>
+            </div>
+            <div id="skillEquipMessage" class="shop-message"></div>
+            <button id="backFromSkillEquipButton" class="button button-secondary">SHOPへ戻る</button>
+        </div>
+    </div>
+
     <!-- ゲーム画面 -->
     <div id="gameScreen" class="screen">
         <canvas id="gameCanvas"></canvas>
         <div id="scoreDisplay">スコア: 0</div>
+        <div id="skillSlots" class="skill-slots">
+            <div class="skill-slot" id="skillSlot1"><span class="skill-name">SLOT1</span><div class="cooldown"><div class="cooldown-fill" id="cooldown1"></div></div></div>
+            <div class="skill-slot" id="skillSlot2"><span class="skill-name">SLOT2</span><div class="cooldown"><div class="cooldown-fill" id="cooldown2"></div></div></div>
+        </div>
+        <div id="attackHint" class="attack-hint">Jキー: 攻撃</div>
+        <div id="upgradeOverlay" class="upgrade-overlay hidden">
+            <div class="upgrade-panel">
+                <h3>強化を選択</h3>
+                <div id="upgradeChoices" class="upgrade-choices"></div>
+            </div>
+        </div>
     </div>
 
     <!-- リザルト画面 -->
     <div id="resultScreen" class="screen">
         <div class="screen-content">
             <h1>クリアタイムランキング</h1>
+            <div id="clearBonusDisplay" class="clear-bonus"></div>
             <div id="scoreList" class="score-list"></div>
             <button id="backToTitleButton" class="button">タイトルへ戻る</button>
         </div>
